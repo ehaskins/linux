@@ -2809,6 +2809,31 @@ static const struct panel_desc tianma_tm070jdhg30 = {
 	.bus_format = MEDIA_BUS_FMT_RGB888_1X7X4_SPWG,
 };
 
+static const struct display_timing tianma_tm070rvhg04_timing = {
+	.pixelclock = { 33300000, 33300000, 33300000 },
+	.hactive = { 800, 800, 800 },
+	.hfront_porch = { 210, 210, 210 },
+	.hback_porch = { 46, 46, 46 },
+	.hsync_len = { 5, 5, 5 },
+	.vactive = { 480, 480, 480 },
+	.vfront_porch = { 22, 22, 22 },
+	.vback_porch = { 23, 23, 23 },
+	.vsync_len = { 3, 3, 3 },
+	.flags = DISPLAY_FLAGS_DE_HIGH,
+};
+
+static const struct panel_desc tianma_tm070rvhg04 = {
+	.timings = &tianma_tm070rvhg04_timing,
+	.num_timings = 1,
+	.bpc = 8,
+	.size =
+		{
+			.width = 154,
+			.height = 86,
+		},
+	.bus_format = MEDIA_BUS_FMT_RGB888_1X24,
+};
+
 static const struct display_timing tianma_tm070rvhg71_timing = {
 	.pixelclock = { 27700000, 29200000, 39600000 },
 	.hactive = { 800, 800, 800 },
@@ -3357,6 +3382,9 @@ static const struct of_device_id platform_of_match[] = {
 	}, {
 		.compatible = "tianma,tm070jdhg30",
 		.data = &tianma_tm070jdhg30,
+	}, {
+		.compatible = "tianma,tm070rvhg04",
+		.data = &tianma_tm070rvhg04,
 	}, {
 		.compatible = "tianma,tm070rvhg71",
 		.data = &tianma_tm070rvhg71,
