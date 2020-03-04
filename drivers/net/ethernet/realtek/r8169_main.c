@@ -744,8 +744,8 @@ static void rtl_unlock_config_regs(struct rtl8169_private *tp)
 
 static void rtl_tx_performance_tweak(struct rtl8169_private *tp, u16 force)
 {
-	pcie_capability_clear_and_set_word(tp->pci_dev, PCI_EXP_DEVCTL,
-					   PCI_EXP_DEVCTL_READRQ, force);
+	//pcie_capability_clear_and_set_word(tp->pci_dev, PCI_EXP_DEVCTL,
+	//				   PCI_EXP_DEVCTL_READRQ, force);
 }
 
 static bool rtl_is_8125(struct rtl8169_private *tp)
